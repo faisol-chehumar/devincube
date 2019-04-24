@@ -18,6 +18,7 @@ export default () => {
       isDone: false
     }
   ]);
+
   const handleSubmit = newData => {
     setData([
       ...data,
@@ -46,7 +47,10 @@ export default () => {
         <TodoList data={data} action={handleRemove} />
       </section>
       <footer className="footer">
-        <TodoCount count={data.length} />
+        <TodoCount
+          count={data.length}
+          done={data.filter(item => item.isDone === true).length}
+        />
       </footer>
     </div>
   );

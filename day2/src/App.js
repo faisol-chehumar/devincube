@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import TodoBoard from "./components/TodoBoard";
+import TodoApp from "./components/TodoApp";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <TodoBoard />
+      <div className="App" style={{ padding: "2rem" }}>
+        <TodoApp />
       </div>
     );
   }

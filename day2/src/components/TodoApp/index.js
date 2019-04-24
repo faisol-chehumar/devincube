@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
+import "todomvc-common/base.css";
+import "todomvc-app-css/index.css";
+
 import TodoList from "../TodoList";
 import TodoInput from "../TodoInput";
+import TodoCount from "../TodoCount";
 
 export default () => {
   const [data, setData] = useState([
@@ -33,19 +37,17 @@ export default () => {
   };
 
   return (
-    <div
-      style={{
-        width: 400,
-        margin: "2rem auto",
-        padding: "2rem",
-        backgroundColor: "#eee",
-        textAlign: "center",
-        borderRadius: "4px"
-      }}
-    >
-      <h2>To do lists</h2>
-      <TodoInput action={handleSubmit} />
-      <TodoList data={data} action={handleRemove} />
+    <div className="todoapp">
+      <header className="header">
+        <h1>todos</h1>
+        <TodoInput action={handleSubmit} />
+      </header>
+      <section className="main">
+        <TodoList data={data} action={handleRemove} />
+      </section>
+      <footer className="footer">
+        <TodoCount count={data.length} />
+      </footer>
     </div>
   );
 };

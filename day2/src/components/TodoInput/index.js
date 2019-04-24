@@ -14,17 +14,20 @@ export default ({ action }) => {
         type="text"
         value={inputTxt}
         onChange={e => setInputTxt(e.target.value)}
-        style={{
-          width: "70%",
-          display: "inline",
-          marginRight: "0.5rem"
-        }}
+        className="new-todo"
       />
       <button
         onClick={addTaskHandle}
         style={{
           width: "20%",
-          display: "inline"
+          display: "block",
+          position: "absolute",
+          top: 0,
+          right: 0,
+          backgroundColor: "#eee",
+          padding: "0.5rem 1rem",
+          marginTop: "15px",
+          marginRight: "1rem"
         }}
       >
         Add Task

@@ -14,17 +14,15 @@ export default ({ text, isDone, action, index }) => {
         type="checkbox"
         onClick={checktHandle}
         defaultChecked={isCheck}
-        style={{
-          marginRight: "1rem"
-        }}
+        className="toggle"
       />
-      <span
+      <label
         style={{
           textDecoration: isDone && "line-through"
         }}
       >
         {text}
-      </span>
+      </label>
     </>
   );
 };
